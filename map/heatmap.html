@@ -35,6 +35,15 @@
             maxZoom: 11.99,
         });
 
+        // Add zoom and rotation controls to the map.
+        map.addControl(new mapboxgl.NavigationControl());
+
+        // disable map rotation using right click + drag
+        map.dragRotate.disable();
+
+        // disable map rotation using touch rotation gesture
+        map.touchZoomRotate.disableRotation();
+
         // we will add more code here in the next steps
 
         map.on('load', function() {
@@ -79,7 +88,7 @@
                             [15, 20]
                         ]
                     },
-                    
+
                 }
             }, 'waterway-label');
         });
@@ -88,3 +97,4 @@
 </body>
 
 </html>
+
