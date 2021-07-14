@@ -101,7 +101,7 @@
                 },
             });
             
-            map.setFilter('forest_layer' == 2001)
+            map.setFilter(`forest_layer`, ['<=', ['number', ['get', 'year']], 2001]);
 
             document.getElementById('slider').addEventListener('input', function(e) {
                 var currentYear = parseInt(e.target.value);
