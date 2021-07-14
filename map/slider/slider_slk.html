@@ -104,7 +104,7 @@
             document.getElementById('slider').addEventListener('input', function(e) {
                 var currentYear = parseInt(e.target.value);
                 // update the map
-                map.setFilter(`forest_layer`, ['==', ['number', ['get', 'year']], currentYear]);
+                map.setFilter(`forest_layer`, ['>=', ['number', ['get', 'year']], currentYear]);
 
                 // update text in the UI
                 document.getElementById('active-hour').innerText = currentYear;
